@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="org.jsoup:jsoup:1.9.2" type="repository">
+    <properties maven-id="org.jsoup:jsoup:1.9.2" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.9.2/jsoup-1.9.2.jar!/" />
+      <root url="jar://C:/Program Files/Java/jdk1.8.0_73/javax.json-api-1.0.jar!/" />
+      <root url="jar://C:/Program Files/Java/jdk1.8.0_73/smtp-1.4.4.jar!/" />
+      <root url="jar://C:/Program Files/Java/jdk1.8.0_73/gson-2.3.1.jar!/" />
+      <root url="jar://C:/Program Files/Java/jdk1.8.0_73/google-api-services-calendar-v3-rev57-1.13.2-beta.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://C:/Program Files/Java/jdk1.8.0_73/javafx-src.zip!/" />
+      <root url="jar://C:/Program Files/Java/jdk1.8.0_73/google-http-client-jackson2-1.14.0-beta-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

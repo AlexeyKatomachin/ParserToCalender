@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_gcal" default="compile.module.gcal">
+  <dirname property="module.gcal.basedir" file="${ant.file.module_gcal}"/>
+  
+  <property name="module.jdk.home.gcal" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.gcal" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.gcal" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.gcal" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="gcal.output.dir" value="${module.gcal.basedir}/../../build/classes/main"/>
+  <property name="gcal.testoutput.dir" value="${module.gcal.basedir}/../../build/classes/test"/>
+  
+  <path id="gcal.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="gcal.module.production.classpath">
+    <path refid="${module.jdk.classpath.gcal}"/>
+    <path refid="library.gradle:_com.google.api-client:google-api-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client-jetty:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.apis:google-api-services-calendar:v3-rev125-1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.http-client:google-http-client-jackson2:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.guava:guava-jdk5:13.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client-java6:1.20.0.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:jetty:6.1.26.classpath"/>
+    <path refid="library.gradle:_com.google.http-client:google-http-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.code.findbugs:jsr305:1.3.9.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-core:2.1.3.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:jetty-util:6.1.26.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:servlet-api:2.5-20081211.classpath"/>
+    <path refid="library.gradle:_org.apache.httpcomponents:httpclient:4.0.1.classpath"/>
+    <path refid="library.gradle:_org.apache.httpcomponents:httpcore:4.0.1.classpath"/>
+    <path refid="library.gradle:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.gradle:_commons-codec:commons-codec:1.3.classpath"/>
+    <path refid="library.gradle:_org.glassfish:javax.json:1.0.4.classpath"/>
+    <path refid="library.gradle:_com.googlecode.json-simple:json-simple:1.1.classpath"/>
+    <path refid="library.gradle:_org.jsoup:jsoup:1.7.2.classpath"/>
+    <path refid="library.gradle:_javax.mail:mail:1.4.1.classpath"/>
+    <path refid="library.gradle:_javax.activation:activation:1.1.classpath"/>
+  </path>
+  
+  <path id="gcal.runtime.production.module.classpath">
+    <pathelement location="${gcal.output.dir}"/>
+    <path refid="library.gradle:_com.google.api-client:google-api-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client-jetty:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.apis:google-api-services-calendar:v3-rev125-1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.http-client:google-http-client-jackson2:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.guava:guava-jdk5:13.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client-java6:1.20.0.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:jetty:6.1.26.classpath"/>
+    <path refid="library.gradle:_com.google.http-client:google-http-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.code.findbugs:jsr305:1.3.9.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-core:2.1.3.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:jetty-util:6.1.26.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:servlet-api:2.5-20081211.classpath"/>
+    <path refid="library.gradle:_org.apache.httpcomponents:httpclient:4.0.1.classpath"/>
+    <path refid="library.gradle:_org.apache.httpcomponents:httpcore:4.0.1.classpath"/>
+    <path refid="library.gradle:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.gradle:_commons-codec:commons-codec:1.3.classpath"/>
+    <path refid="library.gradle:_org.glassfish:javax.json:1.0.4.classpath"/>
+    <path refid="library.gradle:_com.googlecode.json-simple:json-simple:1.1.classpath"/>
+    <path refid="library.gradle:_org.jsoup:jsoup:1.7.2.classpath"/>
+    <path refid="library.gradle:_javax.mail:mail:1.4.1.classpath"/>
+    <path refid="library.gradle:_javax.activation:activation:1.1.classpath"/>
+  </path>
+  
+  <path id="gcal.module.classpath">
+    <path refid="${module.jdk.classpath.gcal}"/>
+    <pathelement location="${gcal.output.dir}"/>
+    <path refid="library.gradle:_com.google.api-client:google-api-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client-jetty:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.apis:google-api-services-calendar:v3-rev125-1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.http-client:google-http-client-jackson2:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.guava:guava-jdk5:13.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client-java6:1.20.0.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:jetty:6.1.26.classpath"/>
+    <path refid="library.gradle:_com.google.http-client:google-http-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.code.findbugs:jsr305:1.3.9.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-core:2.1.3.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:jetty-util:6.1.26.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:servlet-api:2.5-20081211.classpath"/>
+    <path refid="library.gradle:_org.apache.httpcomponents:httpclient:4.0.1.classpath"/>
+    <path refid="library.gradle:_org.apache.httpcomponents:httpcore:4.0.1.classpath"/>
+    <path refid="library.gradle:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.gradle:_commons-codec:commons-codec:1.3.classpath"/>
+    <path refid="library.gradle:_org.glassfish:javax.json:1.0.4.classpath"/>
+    <path refid="library.gradle:_com.googlecode.json-simple:json-simple:1.1.classpath"/>
+    <path refid="library.gradle:_org.jsoup:jsoup:1.7.2.classpath"/>
+    <path refid="library.gradle:_javax.mail:mail:1.4.1.classpath"/>
+    <path refid="library.gradle:_javax.activation:activation:1.1.classpath"/>
+  </path>
+  
+  <path id="gcal.runtime.module.classpath">
+    <pathelement location="${gcal.testoutput.dir}"/>
+    <pathelement location="${gcal.output.dir}"/>
+    <path refid="library.gradle:_com.google.api-client:google-api-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client-jetty:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.apis:google-api-services-calendar:v3-rev125-1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.http-client:google-http-client-jackson2:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.guava:guava-jdk5:13.0.classpath"/>
+    <path refid="library.gradle:_com.google.oauth-client:google-oauth-client-java6:1.20.0.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:jetty:6.1.26.classpath"/>
+    <path refid="library.gradle:_com.google.http-client:google-http-client:1.20.0.classpath"/>
+    <path refid="library.gradle:_com.google.code.findbugs:jsr305:1.3.9.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-core:2.1.3.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:jetty-util:6.1.26.classpath"/>
+    <path refid="library.gradle:_org.mortbay.jetty:servlet-api:2.5-20081211.classpath"/>
+    <path refid="library.gradle:_org.apache.httpcomponents:httpclient:4.0.1.classpath"/>
+    <path refid="library.gradle:_org.apache.httpcomponents:httpcore:4.0.1.classpath"/>
+    <path refid="library.gradle:_commons-logging:commons-logging:1.1.1.classpath"/>
+    <path refid="library.gradle:_commons-codec:commons-codec:1.3.classpath"/>
+    <path refid="library.gradle:_org.glassfish:javax.json:1.0.4.classpath"/>
+    <path refid="library.gradle:_com.googlecode.json-simple:json-simple:1.1.classpath"/>
+    <path refid="library.gradle:_org.jsoup:jsoup:1.7.2.classpath"/>
+    <path refid="library.gradle:_javax.mail:mail:1.4.1.classpath"/>
+    <path refid="library.gradle:_javax.activation:activation:1.1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.gcal">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.gcal">
+    <patternset refid="excluded.from.module.gcal"/>
+  </patternset>
+  
+  <path id="gcal.module.sourcepath">
+    <dirset dir="${module.gcal.basedir}/../../../gCal">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="gcal.module.test.sourcepath">
+    <dirset dir="${module.gcal.basedir}/../../../gCal">
+      <include name="src/test/java"/>
+      <include name="src/test/resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.gcal" depends="compile.module.gcal.production,compile.module.gcal.tests" description="Compile module gCal"/>
+  
+  <target name="compile.module.gcal.production" depends="register.custom.compilers" description="Compile module gCal; production classes">
+    <mkdir dir="${gcal.output.dir}"/>
+    <javac2 destdir="${gcal.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.gcal}/javac">
+      <compilerarg line="${compiler.args.gcal}"/>
+      <bootclasspath refid="gcal.module.bootclasspath"/>
+      <classpath refid="gcal.module.production.classpath"/>
+      <src refid="gcal.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.gcal"/>
+    </javac2>
+    
+    <copy todir="${gcal.output.dir}">
+      <fileset dir="${module.gcal.basedir}/../../src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.gcal.basedir}/../../src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.gcal.tests" depends="register.custom.compilers,compile.module.gcal.production" description="compile module gCal; test classes" unless="skip.tests">
+    <mkdir dir="${gcal.testoutput.dir}"/>
+    <javac2 destdir="${gcal.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.gcal}/javac">
+      <compilerarg line="${compiler.args.gcal}"/>
+      <bootclasspath refid="gcal.module.bootclasspath"/>
+      <classpath refid="gcal.module.classpath"/>
+      <src refid="gcal.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.gcal"/>
+    </javac2>
+    
+    <copy todir="${gcal.testoutput.dir}">
+      <fileset dir="${module.gcal.basedir}/../../src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.gcal.basedir}/../../src/test/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.gcal" description="cleanup module">
+    <delete dir="${gcal.output.dir}"/>
+    <delete dir="${gcal.testoutput.dir}"/>
+  </target>
+</project>

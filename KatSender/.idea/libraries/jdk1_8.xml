@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="jdk1.8">
+    <CLASSES>
+      <root url="jar://C:/Program Files/Java/jdk1.8.0_73/jsoup-1.9.2.jar!/" />
+      <root url="jar://C:/Program Files/Java/jdk1.8.0_73/javax.mail-1.4.5.jar!/" />
+      <root url="jar://C:/Program Files/Java/jdk1.8.0_73/smtp-1.4.4.jar!/" />
+      <root url="jar://C:/Program Files/Java/jdk1.8.0_73/activation-1.1.jar!/" />
+      <root url="file://C:/Program Files/Java/jdk1.8.0_73" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://C:/Program Files/Java/jdk1.8.0_73/javafx-src.zip!/" />
+      <root url="file://C:/Program Files/Java/jdk1.8.0_73" />
+    </SOURCES>
+    <jarDirectory url="file://C:/Program Files/Java/jdk1.8.0_73" recursive="false" />
+    <jarDirectory url="file://C:/Program Files/Java/jdk1.8.0_73" recursive="false" type="SOURCES" />
+  </library>
+</component>
